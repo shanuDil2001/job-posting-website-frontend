@@ -1,10 +1,11 @@
-import './App.css'
+import Header from "./components/header";
 
 function App() {
 
   return (
-    <div className='w-full h-screen bg-amber-200'>
-
+    <div className='w-full h-screen'>
+      <Header />
+      <div className="w-full h-[2000px]"></div>
     </div>
   );
 }
