@@ -1,11 +1,16 @@
+import Footer from "./components/footer";
 import Header from "./components/header";
+import SearchBar from "./components/searchBar";
+import Stats from "./components/stats";
 
 function App() {
 
   return (
     <div className='w-full h-screen'>
       <Header />
-      <div className="w-full h-[2000px]"></div>
+      <SearchBar />
+      <Stats />
+      <Footer />
     </div>
   );
 }
