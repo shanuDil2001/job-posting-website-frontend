@@ -14,7 +14,7 @@ function Header() {
 
          {
             isMenuOpen && (
-               <nav className="fixed top-0 left-0 w-screen h-screen z-10 bg-white flex flex-col justify-start items-center gap-3 md:hidden">
+               <nav className="fixed top-0 left-0 w-screen h-screen z-10 bg-linear-to-b from-green-100 to-white flex flex-col justify-start items-center gap-3 md:hidden">
                   <button
                      onClick={() => setIsMenuOpen(false)}
                      className="w-[50px] bg-slate-300 p-2 absolute top-5 -right-2.5 rounded-xl">

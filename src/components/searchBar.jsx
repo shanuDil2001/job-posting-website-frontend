@@ -13,7 +13,7 @@ function SearchBar() {
          </div>
          <div className="w-[60%] flex flex-col items-center md:flex-row md:gap-2 md:items-center md:w-[80%]">
             <input
-               className="bg-slate-100 p-2 rounded-md mb-4 border border-gray-400 w-full md:mb-0 md:w-1/2"
+               className="bg-slate-100 p-2 rounded-md mb-4 border border-gray-400 w-full shadow-md md:mb-0 md:w-1/2"
                type="text"
                placeholder="I'm looking for... (Eg: Job Title)"
                onChange={(event) => {
@@ -22,7 +22,7 @@ function SearchBar() {
             />
 
             <select
-               className="w-full p-2 bg-white border border-gray-300 rounded-lg text-gray-700 mb-4 md:mb-0 md:w-1/4"
+               className="w-full p-2 bg-white border border-gray-300 rounded-lg text-gray-700 mb-4 shadow-md md:mb-0 md:w-1/4"
                defaultValue="Select Location"
                onChange={(event) => {
                   setLocation(event.target.value);
@@ -36,7 +36,7 @@ function SearchBar() {
 
 
             <button
-               className="flex justify-center items-center gap-2 w-[50%] bg-blue-400 text-white p-2 rounded-md hover:bg-blue-600 transition-colors md:w-1/4"
+               className="flex justify-center items-center gap-2 w-[50%] bg-blue-400 text-white p-2 rounded-md hover:bg-blue-600 transition-colors shadow-md md:w-1/4"
                type="submit"
                onClick={() => {
                   console.log(location);
