@@ -20,8 +20,10 @@ function App() {
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
         </Route>
-        <Route path="/home" element={<StudentLayout />} >
+        <Route path="/home/" element={<StudentLayout />} >
           <Route index element={<Home />} />
+          <Route path="jobs" element={<Jobs />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />
