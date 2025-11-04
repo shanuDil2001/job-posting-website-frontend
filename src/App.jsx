@@ -31,7 +31,7 @@ function App() {
         </Route>
         <Route path="/dashboard" element={<EmployerLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="edit" element={<EditJob />} />
+          <Route path="edit-job" element={<EditJob />} />
           <Route path="new-job" element={<NewJob />} />
         </Route>
       </Routes>

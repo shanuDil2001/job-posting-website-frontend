@@ -19,7 +19,7 @@ function Header() {
 
    return (
       <header className="fixed shadow-lg w-full h-[65px] z-10 bg-slate-100 text-slate-500 font-semibold flex justify-between md:flex md:justify-between md:items-center">
-         <Link to="/" className="text-xl">
+         <Link to="" className="text-xl">
             <img className="w-[180px] h-[60px] object-cover" src="/logo.png" />
          </Link>
 

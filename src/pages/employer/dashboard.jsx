@@ -97,7 +97,9 @@ function Dashboard() {
                               {new Date(job.createdAt).toLocaleDateString()}
                            </td>
                            <td className="py-3 px-4">
-                              <button className="me-2 px-3 py-1 bg-green-400 text-white rounded-md hover:bg-green-600 cursor-pointer">
+                              <button
+                                 onClick={() => navigate("/dashboard/edit-job")}
+                                 className="me-2 px-3 py-1 bg-green-400 text-white rounded-md hover:bg-green-600 cursor-pointer">
                                  Edit
                               </button>
                               <button className="px-3 py-1 bg-red-400 text-white rounded-md hover:bg-red-600 cursor-pointer">
