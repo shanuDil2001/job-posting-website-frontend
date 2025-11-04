@@ -6,10 +6,9 @@ function EmployerLayout() {
    return (
       <div className="w-full">
          <Header />
-         <div className="w-full h-full">
+         <div className="w-full h-full flex justify-center bg-linear-to-t from-green-100 to-white pt-[65px]">
             <Outlet />
          </div>
-         <Footer />
       </div>
    );
 }

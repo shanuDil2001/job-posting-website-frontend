@@ -10,6 +10,7 @@ import StudentLayout from "./pages/student/studentLayout";
 import EmployerLayout from "./pages/employer/employerLayout";
 import Dashboard from "./pages/employer/dashboard";
 import EditJob from "./pages/employer/editJob";
+import NewJob from "./pages/employer/newJob";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/dashboard" element={<EmployerLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="edit" element={<EditJob />} />
+          <Route path="new-job" element={<NewJob />} />
         </Route>
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />
