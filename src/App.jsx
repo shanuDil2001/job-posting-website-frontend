@@ -7,6 +7,9 @@ import RegisterPage from "./pages/register";
 import LoginPage from "./pages/login";
 import { Toaster } from "react-hot-toast";
 import StudentLayout from "./pages/student/studentLayout";
+import EmployerLayout from "./pages/employer/employerLayout";
+import Dashboard from "./pages/employer/dashboard";
+import EditJob from "./pages/employer/editJob";
 
 function App() {
 
@@ -24,6 +27,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="jobs" element={<Jobs />} />
           <Route path="about" element={<About />} />
+        </Route>
+        <Route path="/dashboard" element={<EmployerLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="edit" element={<EditJob />} />
         </Route>
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />

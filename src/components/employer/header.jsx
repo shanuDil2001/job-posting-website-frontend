@@ -24,19 +24,10 @@ function Header() {
                      <FaTimes className="text-2xl text-red-500" />
                   </button>
 
-                  <a href="/home" className="mt-20  shadow w-[90%] p-2 text-center rounded-md">Home</a>
-                  <a href="/home/jobs" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">Jobs</a>
-                  <a href="/home/about" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">About</a>
-                  <button className="mt-1  shadow w-[90%] p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Log Out</button>
+                  <button className="mt-20 shadow w-[90%] p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Log Out</button>
                </nav>
             )
          }
-
-         <nav className="space-x-5 hidden md:w-[calc((100%)-(180px))] md:flex md:justify-center md:items-center">
-            <Link to="/home" className="text-blue-600 font-semibold hover:text-slate-600">Home</Link>
-            <Link to="/home/jobs" className="text-blue-600 font-semibold hover:text-slate-600">Jobs</Link>
-            <Link to="/home/about" className="text-blue-600 font-semibold hover:text-slate-600">About</Link>
-         </nav>
 
          <div className="hidden md:block">
             <button className="px-2" onClick={() => { setOpen(true) }}>
