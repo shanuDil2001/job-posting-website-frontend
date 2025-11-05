@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import toast from "react-hot-toast";
 
 function Header() {
    const [open, setOpen] = useState(false);
    const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const navigate = useNavigate();
+
+   function handleLogout() {
+      localStorage.removeItem("token");
+      navigate("/login");
+      toast.success("Logged out successfully");
+   }
 
    return (
       <header className="fixed shadow-lg w-full h-[65px] bg-slate-100 text-slate-500 font-semibold flex justify-between z-10 md:flex md:justify-between md:items-center">
@@ -27,7 +35,9 @@ function Header() {
                   <a href="/home" className="mt-20  shadow w-[90%] p-2 text-center rounded-md">Home</a>
                   <a href="/home/jobs" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">Jobs</a>
                   <a href="/home/about" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">About</a>
-                  <button className="mt-1  shadow w-[90%] p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Log Out</button>
+                  <button
+                     onClick={handleLogout}
+                     className="mt-1  shadow w-[90%] p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Log Out</button>
                </nav>
             )
          }
@@ -54,7 +64,9 @@ function Header() {
                   },
                }}
             >
-               <button className="mt-10 shadow w-full p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Logout</button>
+               <button
+                  onClick={handleLogout}
+                  className="mt-10 shadow w-full p-2 text-center bg-red-300 text-blue-600 font-semibold rounded-md hover:bg-slate-500 hover:text-slate-200">Logout</button>
             </Modal>
          </div>
 

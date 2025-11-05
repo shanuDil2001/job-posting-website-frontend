@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const navigate = useNavigate();
 
    return (
       <header className="fixed shadow-lg w-full h-[65px] bg-slate-100 text-slate-500 font-semibold flex justify-between z-10 md:flex md:justify-between md:items-center">
@@ -24,7 +25,9 @@ function Header() {
                   <a href="/" className="mt-20  shadow w-[90%] p-2 text-center rounded-md">Home</a>
                   <a href="/jobs" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">Jobs</a>
                   <a href="/about" className="mt-1  shadow w-[90%] p-2 text-center rounded-md">About</a>
-                  <button className="bg-slate-200  shadow text-blue-600 font-semibold w-[90%] px-4 py-2 rounded hover:bg-gray-200">Login</button>
+                  <button
+                     onClick={() => navigate("/login")}
+                     className="bg-slate-200  shadow text-blue-600 font-semibold w-[90%] px-4 py-2 rounded hover:bg-gray-200">Login</button>
                </nav>
             )
          }
@@ -35,7 +38,9 @@ function Header() {
             <Link to="/about" className="text-blue-600 font-semibold hover:text-slate-600">About</Link>
          </nav>
 
-         <button className="hidden md:block md:w-[100px] bg-slate-300 text-blue-600 font-semibold px-4 py-2 rounded hover:bg-slate-500 hover:text-slate-200 me-5">Login</button>
+         <button
+            onClick={() => navigate("/login")}
+            className="hidden md:block md:w-[100px] bg-slate-300 text-blue-600 font-semibold px-4 py-2 rounded hover:bg-slate-500 hover:text-slate-200 me-5">Login</button>
 
          <button className="me-3 md:hidden" onClick={() => setIsMenuOpen(true)}>
             <GiHamburgerMenu className="text-2xl text-slate-950" />
