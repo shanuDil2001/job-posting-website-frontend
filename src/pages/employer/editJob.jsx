@@ -26,7 +26,8 @@ function EditJob() {
             type: type,
             jobDate: jobDate,
             contact: contact,
-            salary: salary
+            salary: salary,
+            status: status,
          }, {
             headers: {
                Authorization: `Bearer ${localStorage.getItem("token")}`,

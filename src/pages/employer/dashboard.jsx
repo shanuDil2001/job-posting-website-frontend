@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Dashboard() {
    const [jobs, setJobs] = useState([]);
@@ -9,24 +10,39 @@ function Dashboard() {
    const navigate = useNavigate();
 
    useEffect(() => {
-      async function fetchJobs() {
-         try {
-            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/jobs`, {
-               headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`
-               }
-            });
-            setJobs(response.data.jobs);
-            console.log(response.data.jobs);
-         } catch (err) {
-            setError(err.message);
-         } finally {
-            setLoading(false);
+      if (loading) {
+         async function fetchJobs() {
+            try {
+               const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/jobs`, {
+                  headers: {
+                     Authorization: `Bearer ${localStorage.getItem("token")}`
+                  }
+               });
+               setJobs(response.data.jobs);
+            } catch (err) {
+               setError(err.message);
+            } finally {
+               setLoading(false);
+            }
          }
-      }
 
-      fetchJobs();
-   }, []);
+         fetchJobs();
+      }
+   }, [loading]);
+
+   async function deleteJob(jobId) {
+      try {
+         await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/jobs/${jobId}`, {
+            headers: {
+               Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+         });
+         toast.success("Job deleted successfully!");
+      } catch (error) {
+         console.error(error);
+         toast.error("Failed to delete job. Please try again.");
+      }
+   }
 
    if (loading) {
       return (
@@ -94,15 +110,20 @@ function Dashboard() {
                               </span>
                            </td>
                            <td className="py-3 px-4">
-                              {new Date(job.createdAt).toLocaleDateString()}
+                              {new Date(job.jobDate).toISOString().split("T")[0]}
                            </td>
                            <td className="py-3 px-4">
                               <button
-                                 onClick={() => navigate("/dashboard/edit-job")}
+                                 onClick={() => navigate("/dashboard/edit-job", { state: job })}
                                  className="me-2 px-3 py-1 bg-green-400 text-white rounded-md hover:bg-green-600 cursor-pointer">
                                  Edit
                               </button>
-                              <button className="px-3 py-1 bg-red-400 text-white rounded-md hover:bg-red-600 cursor-pointer">
+                              <button
+                                 onClick={() => {
+                                    deleteJob(job.jobId)
+                                    setLoading(true)
+                                 }}
+                                 className="px-3 py-1 bg-red-400 text-white rounded-md hover:bg-red-600 cursor-pointer">
                                  Delete
                               </button>
                            </td>
