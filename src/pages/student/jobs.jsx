@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import JobCard from "../components/student/jobCard";
+import JobCard from "../../components/student/jobCard";
 
-function Jobs() {
+function StudentJobs() {
    const [jobs, setJobs] = useState([]);
    const [filteredJobs, setFilteredJobs] = useState([]);
    const [loading, setLoading] = useState(true);
@@ -84,4 +84,4 @@ function Jobs() {
    );
 }
 
-export default Jobs;
+export default StudentJobs;

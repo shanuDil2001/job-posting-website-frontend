@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Jobs from "./pages/jobs";
 import About from "./pages/about";
 import CommonLayout from "./pages/commonLayout";
 import Home from "./pages/home";
@@ -11,6 +10,8 @@ import EmployerLayout from "./pages/employer/employerLayout";
 import Dashboard from "./pages/employer/dashboard";
 import EditJob from "./pages/employer/editJob";
 import NewJob from "./pages/employer/newJob";
+import Jobs from "./pages/jobs";
+import StudentJobs from "./pages/student/jobs";
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         </Route>
         <Route path="/home/" element={<StudentLayout />} >
           <Route index element={<Home />} />
-          <Route path="jobs" element={<Jobs />} />
+          <Route path="jobs" element={<StudentJobs />} />
           <Route path="about" element={<About />} />
         </Route>
         <Route path="/dashboard" element={<EmployerLayout />}>
