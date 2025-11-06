@@ -12,6 +12,7 @@ import EditJob from "./pages/employer/editJob";
 import NewJob from "./pages/employer/newJob";
 import Jobs from "./pages/jobs";
 import StudentJobs from "./pages/student/jobs";
+import StudentHome from "./pages/student/home";
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
         </Route>
         <Route path="/home/" element={<StudentLayout />} >
-          <Route index element={<Home />} />
+          <Route index element={<StudentHome />} />
           <Route path="jobs" element={<StudentJobs />} />
           <Route path="about" element={<About />} />
         </Route>

@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import axios from "axios";
-import JobCard from "../components/student/jobCard";
+import JobCard from "../../components/student/jobCard";
 
-function Home() {
+
+function StudentHome() {
    const navigate = useNavigate();
    const [jobs, setJobs] = useState([]);
    const [loading, setLoading] = useState(true);
@@ -59,7 +60,7 @@ function Home() {
                <p className="text-center md:text-lg text-slate-500">PartTimeBuddy connects students with flexible part-time job opportunities. Developed as a university project, our platform helps students balance studies with work while providing employers access to motivated and capable talent.</p>
             </div>
             <button
-               onClick={() => navigate("/login")}
+               onClick={() => navigate("/home/jobs")}
                className="bg-white text-green-600 font-semibold px-6 py-3 rounded-md shadow-sm hover:bg-green-400 hover:text-white"
             >
                Explore Jobs
@@ -81,7 +82,7 @@ function Home() {
 
             <div className="text-center mt-10">
                <button
-                  onClick={() => navigate("/login")}
+                  onClick={() => navigate("/home/jobs")}
                   className="bg-white text-green-600 font-semibold px-6 py-3 rounded-md shadow-sm hover:bg-green-400 hover:text-white mb-10"
                >
                   View All Jobs
@@ -126,4 +127,4 @@ function Home() {
    );
 }
 
-export default Home;
+export default StudentHome;
