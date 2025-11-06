@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Jobs from "./pages/jobs";
 import About from "./pages/about";
 import CommonLayout from "./pages/commonLayout";
-// import Home from "./pages/home";
+import Home from "./pages/home";
 import RegisterPage from "./pages/register";
 import LoginPage from "./pages/login";
 import { Toaster } from "react-hot-toast";
@@ -11,7 +11,6 @@ import EmployerLayout from "./pages/employer/employerLayout";
 import Dashboard from "./pages/employer/dashboard";
 import EditJob from "./pages/employer/editJob";
 import NewJob from "./pages/employer/newJob";
-import Home from "./pages/test";
 
 function App() {
 
