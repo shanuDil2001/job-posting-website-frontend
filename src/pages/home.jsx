@@ -54,7 +54,7 @@ function Home() {
 
          <section className="min-h-screen bg-linear-to-b from-yellow-100 to-green-100 text-white py-15 px-6 text-center flex flex-col items-center justify-center">
             <div className="flex flex-col justify-center items-center w-[60%] mb-8">
-               <img className="w-[400px]" src="src\assets\background.png" alt="" />
+               <img className="w-[400px]" src="src/assets/background.png" alt="" />
                <h1 className="font-bold text-3xl text-blue-400 text-shadow-md mb-8 md:text-5xl">PartTime<span className="text-lime-400">Buddy</span></h1>
                <p className="text-center md:text-lg text-slate-500">PartTimeBuddy connects students with flexible part-time job opportunities. Developed as a university project, our platform helps students balance studies with work while providing employers access to motivated and capable talent.</p>
             </div>
